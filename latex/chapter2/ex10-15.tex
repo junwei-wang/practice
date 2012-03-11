@@ -1,0 +1,33 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Filename:      ex10.tex
+% Author:        Junwei Wang(wakemecn@gmail.com)
+% Last Modified: 2012-03-11 13:44
+% Description:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{book}
+\usepackage[space]{ctex}
+\begin{document}
+\parindent=0pt
+\framebox[60mm][l]{L \hspace{\fill} R}\\
+\framebox[60mm][l]{L \hspace{1.5\fill} R}\\
+\framebox[60mm][l]{L \mbox{} R}\\
+\framebox[60mm][l]{L R}\\
+
+\parindent=0pt
+\framebox[60mm][l]{L \hfil M \hfil R}\\
+\framebox[60mm][l]{L \hfill M \hfill R}\\
+
+\fbox{\parbox[c][20mm][t]{1em}{U \vfil M \vfil D}}
+\fbox{\parbox[c][20mm][t]{1em}{U \vfil M \vfill D}}
+
+\parindent=0pt
+A\hspace{\stretch{1}}B\hspace{\stretch{3}}C\\
+
+\parindent=0pt
+\makebox[6cm]{\dotfill}
+\makebox[6cm]{\hrulefill}\\
+\makebox[6cm]{\downbracefill}
+\makebox[6cm]{\upbracefill}\\
+\makebox[6cm]{\leftarrowfill}\\
+\fbox{\shortstack{left}}\rightarrowfill\fbox{\shortstack{right}}
+\end{document}
