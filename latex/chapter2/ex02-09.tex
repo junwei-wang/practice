@@ -1,0 +1,38 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Filename:      ex2-2.tex
+% Author:        Junwei Wang(wakemecn@gmail.com)
+% Last Modified: 2012-03-11 12:43
+% Description:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{book}
+\usepackage[space]{ctex}
+\begin{document}
+\newcommand{\mycmdA}{Donald E. Knuth }
+In 1971, \mycmdA was the recioient of xxx\\
+
+\newcommand{\mycmdB}[1]{{\heiti #1}}
+方程式有两种：\mycmdB{衡等式}和\mycmdB{条件等式}\\
+
+\newcommand{\mycmdC}[2]{%
+$#1_1,#1_2,\dots,#1_#2$}
+数列\mycmdC{x}{n}或者数列\mycmdC{a}{m}\\
+
+\newcommand{\mycmdD}[2][n]{%
+$#2_1,#2_2,\dots,#2_#1$}
+数列\mycmdD{x}或者数列\mycmdD[m]{a}\\
+
+\newcommand{\mycmdE}[2]{#1: \textsl{#2}}
+\mycmdE{System}{GSM}
+\\
+\newcommand{\lvec}{}
+\newcommand{\DEFlvec}[2]{\renewcommand{\lvec}[1][#2]{%
+\ensuremath{#1_1+\cdots+#1_{##1}}}}
+\DEFlvec{x}{n}
+Default: $\lvec \neq $\lvec[k]
+\DEFlvec{y}{i}
+Now: $\lvec \neq $\lvec[k]
+\\
+\newcommand{\CC}{\ensuremath{\Gamma_{i}}}
+\CC\ and $\nu(s)$
+\end{document}
+
