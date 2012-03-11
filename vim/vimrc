@@ -1,0 +1,99 @@
+runtime! archlinux.vim
+
+syntax on
+set number
+set hlsearch
+set textwidth=80
+
+"set autoindent
+"set cindent
+
+set foldenable
+set foldmethod=syntax
+set foldcolumn=3
+
+set laststatus=2
+set statusline=%<%F%1*%m%*%r%y%=%l,%c%V\ %p%%	" set statusline 
+
+set cursorline
+
+match ErrorMsg /\%>75v.\+/		" let column>75 be warned
+match ColorColumn /[^t]\zs\t\+/		" match tab not in the ^
+
+iabbrev mymail wakemecn@gmail.com
+iabbrev myaddr No.1500, Shunhua Road, Jinan CityShandong Prov. China 250101
+
+cabbrev make :w:make
+
+"autocmd FileType c,php set expandtab	" 
+" 
+
+
+imap ( ()i
+imap [ []i
+imap { {}i
+"imap { {}ko
+
+imap #1 #include
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" autocmd and auto group
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufNewFile * silent! 0r ~/.vim/template/%:e.tpl
+
+augroup newFileDetection
+autocmd CursorMovedI * call CheckFileType()
+augroup END
+
+autocmd BufWritePre,FileWritePre *.* mark s|call LastModTime()|'s
+
+autocmd BufRead,BufNewFile *.html set autoindent expandtab shiftwidth=2
+
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Choose a color scheme as the time change
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+function SetHourColorScheme()
+  let g:CurrentTime = (strftime("%H") + 0) / 6
+  let g:FavColorScheme = ["darkblue", "morning", "shine", "desert"]
+  let g:colors_name = "just_a_default_name"
+  if g:colors_name !~ g:FavColorScheme[g:CurrentTime]
+    execute "colorscheme " . g:FavColorScheme[g:CurrentTime]
+  endif
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Check type of file 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+function CheckFileType()
+  if exists("b:countCheck") == 0
+    let b:countCheck = 0
+  endif
+  let b:countCheck += 1
+  if &filetype == "" && b:countCheck > 20 && b:countCheck < 100
+    filetype detect
+  elseif b:countCheck > 200 || &filetype != ""
+    autocmd! newFileDetection
+  endif
+
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Update the last modify time
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+fun LastModTime()
+  if exists("lastModLine") == 0
+    let lastModLine = line("$") 
+  endif
+  if line("$") > 20
+    let lastModLine = 20
+  endif
+  exe "1," . lastModLine . "g/Last Modified:/s/Last Modified.*/"
+         \ . "Last Modified: " . strftime("%F %R")
+  exe "1," . lastModLine . "g/Filename:/s/Filename.*/"
+         \ . "Filename:      " . bufname("%")
+endfun
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" call function
+call SetHourColorScheme()
