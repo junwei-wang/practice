@@ -1,12 +1,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Filename:      ex16-33.tex
 % Author:        Junwei Wang(wakemecn@gmail.com)
-% Last Modified: 2012-03-11 16:15
+% Last Modified: 2012-03-11 20:52
 % Description:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{book}
 \usepackage[space]{ctex}
 \usepackage{graphicx}
+\usepackage{fancybox}
 \begin{document}
 \parindent=0pt
 \makebox[60mm][s]{电子计算机}\\
@@ -73,15 +74,12 @@ $$a^{2}+b^{2}=c^{2}\makebox[0pt][l]{(勾股定理)}$$
 \usebox{\mysquare}
 \usebox{\mysquare}
 
-%\newsavebox{\mybox}
-%\newenvironment{FramePage}[2][c]%
-%{\begin{lrbox}{\mybox}\begin{minipage}[#1]{#2}}%
-%{\end{minipage}\end{lrbox}\shadowsize=2pt \shadowbox{\userbox{\mybox}}}
-%\begin{FramePage}{58mm}
-%在小页环境中可以使用抄录命令和抄录环境。这是千真万确的。
-%\end{FramePage}
-
-
-
+\newsavebox{\mybox}
+\newenvironment{FramePage}[2][c]%
+{\begin{lrbox}{\mybox}\begin{minipage}[#1]{#2}}%
+{\end{minipage}\end{lrbox}\shadowsize=2pt \shadowbox{\usebox{\mybox}}}
+\begin{FramePage}{58mm}
+在小页环境中可以使用抄录命令和抄录环境。这是千真万确的。
+\end{FramePage}
 
 \end{document}
