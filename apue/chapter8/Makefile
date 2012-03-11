@@ -1,0 +1,36 @@
+all: echoarg echoall problem8-6 problem8-2 prog8-18 prog8-17 prog8-16 prog8-15 prog8-14 prog8-13 prog8-10 prog8-8 prog8-6 prog8-5 prog8-4 prog8-2 prog8-1
+prog8-1: prog8-1.c apue.c
+prog8-2: prog8-2.c apue.c
+prog8-4: prog8-4.c apue.c
+prog8-5: prog8-5.c apue.c
+prog8-6: prog8-6.c apue.c
+prog8-8: prog8-8.c apue.c
+echoall: echoall.c apue.c
+echoarg: echoarg.c apue.c
+prog8-10: prog8-10.c apue.c
+prog8-13: prog8-13.c apue.c
+prog8-14: prog8-14.c apue.c
+prog8-15: prog8-15.c apue.c
+prog8-16: prog8-16.c apue.c
+prog8-17: prog8-17.c apue.c
+prog8-18: prog8-18.c apue.c
+problem8-2: problem8-2.c apue.c
+problem8-6: problem8-6.c apue.c
+clean:
+	- rm prog8-1
+	- rm prog8-2
+	- rm prog8-4
+	- rm prog8-5
+	- rm prog8-6
+	- rm prog8-8
+	- rm echoall
+	- rm echoarg
+	- rm prog8-10
+	- rm prog8-13
+	- rm prog8-14
+	- rm prog8-15
+	- rm prog8-16
+	- rm prog8-17
+	- rm prog8-18
+	- rm problem8-2
+	- rm problem8-6
