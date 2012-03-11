@@ -1,0 +1,87 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Filename:      ex16-33.tex
+% Author:        Junwei Wang(wakemecn@gmail.com)
+% Last Modified: 2012-03-11 16:15
+% Description:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{book}
+\usepackage[space]{ctex}
+\usepackage{graphicx}
+\begin{document}
+\parindent=0pt
+\makebox[60mm][s]{电子计算机}\\
+\makebox[60mm][s]{computer}\\
+\makebox[60mm][s]{computer test}\\
+\makebox[60mm][s]{c o m p u t e r}\\
+
+For emphasis, you may wish to \raisebox{1,5ex}{raise} or %
+\raisebox{-1.0ex}{lower} certain text insides your documents.
+
+For emphasis, you may wish to \raisebox{2,5ex}{raise} or %
+\raisebox{-1.0ex}{lower} certain text insides your documents.
+
+\noindent \makebox[0pt][r]{fbox{注意} \qquad 如果重新安装操作%
+则系统盘中的所有数据将被删除！}
+
+\noindent \makebox[0pt][r]{\rotatebox{90}{\makebox[0pt][r]{零宽度盒子}%
+\quad}}\quad 尽管对象仍然被正确地被排版，但系\\统认为他的宽度为零，与%
+前面的或后\\面的文本排版无关，从而造成相互重叠。\\通常这种现象显然不正%
+常，但有时却可\\以利用宽度盒子的这一特点。制作出多\\种页面特效。
+
+$$a^{2}+b^{2}=c^{2}$$
+$$a^{2}+b^{2}=c^{2}\makebox{(勾股定理)}$$
+$$a^{2}+b^{2}=c^{2}\makebox[0pt][l]{(勾股定理)}$$
+
+\newlength{\mylen}
+\settowidth{\mylen}{勾股定理}
+\makebox[0pt][l]{\color{blue}\rule[-0.9ex]{\mylen}{1pt}}勾股定理：%
+直角三角形两直角边的平方和等于斜边的平方。
+
+\noindent 分 类 号：U491 \hfill
+\newlength{\mylength}
+\settowidth{\mylength}{学\qquad 号：200800300237}
+\begin{minipage}[t]{\mylength}
+单位代码：10000\\
+学\qquad 号：200800300237\\
+密\qquad 级：公开\\
+\end{minipage}
+
+\noindent 分 类 号：U491 \hfill
+\begin{minipage}[b]{\mylength}
+单位代码：10000\\
+学\qquad 号：200800300237\\
+密\qquad 级：公开\\
+\end{minipage}
+
+
+\noindent 楞次定律：\parbox[t]{43mm}{\sl 磁通变化产生的电流的方向是%
+它能阻止磁通变化的方向上。}
+
+
+\parbox{37mm}{Did you know?\par \rule[4mm]{37mm}{1.5pt}}
+
+\framebox{\rule{9mm}{1pt}\rule{1pt}{5mm}}
+\framebox{\rule{9mm}{0pt}\rule{0pt}{5mm}}
+
+\noindent \fbox{\parbox{57mm}{\parindent=4pt 请在整个关机过程结束后\\再关闭计算机}}
+
+\framebox[2\width]{computer}
+
+\newsavebox{\mysquare}
+\sbox{\mysquare}{\fboxrule=1pt \framebox{\rule{7mm}{0pt}\rule{0pt}{7mm}}}
+
+\usebox{\mysquare}
+\usebox{\mysquare}
+
+%\newsavebox{\mybox}
+%\newenvironment{FramePage}[2][c]%
+%{\begin{lrbox}{\mybox}\begin{minipage}[#1]{#2}}%
+%{\end{minipage}\end{lrbox}\shadowsize=2pt \shadowbox{\userbox{\mybox}}}
+%\begin{FramePage}{58mm}
+%在小页环境中可以使用抄录命令和抄录环境。这是千真万确的。
+%\end{FramePage}
+
+
+
+
+\end{document}
