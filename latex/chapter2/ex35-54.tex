@@ -1,0 +1,131 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Filename:      ex35-54.tex
+% Author:        Junwei Wang(wakemecn@gmail.com)
+% Last Modified: 2012-03-11 20:43
+% Description:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{book}
+\usepackage[space]{ctex}
+\usepackage{graphpap}
+\usepackage{fancyvrb}
+\begin{document}
+\begin{center}
+{\large 高等数学讲义}\\[4mm]
+下册\\[1mm]
+wakemecn@gmail.com\\
+\end{center}
+
+{\centering 
+{\large 高等数学讲义}\\[4mm]
+下册\\[1mm]
+wakemecn@gmail.com\\
+}
+
+\begin{flushleft}
+f:你好\\
+E:你好\\
+D:你好\\
+V:你好\\
+\end{flushleft}
+
+\begin{flushright}
+QQ:552026291\\
+Tel:15154101098\\
+Email:wakemecn@gmail.com\\
+Add:No.1500, Shunhua Road, Jinan City\\
+Shandong Prov. China 250101 
+\end{flushright}
+
+\begin{picture}(200,170)(-20,-18)
+\graphpaper(0,0)(150,150)
+\thicklines\color{blue}
+\put(17,22){\line(1,0){100}}
+\put(117,22){\line(0,1){100}}
+\put(17,22){\line(1,1){100}}\color{red}
+\put(74,11){1}
+\put(122,71){1}
+\put(63,90){$\sqrt{2}$}
+\end{picture}
+
+\begin{quotation}
+黑洞是恒星的一种残骸，它是引力收缩的极点，极端到近乎荒唐。\par
+%\raggedleft ---约翰\cdot卢米涅
+\end{quotation}
+黑洞一次是在1968年由美国天体物理学家慧勒首先提出来的。
+\\\\\\\\\\
+A human book designer tries to find out waht the author had in mind while %
+writing the manuscript. He decides on chapter headings, citations, examples, %
+formulat,etc.\\
+\begin{sloppypar}
+A human book designer tries to find out waht the author had in mind while %
+writing the manuscript. He decides on chapter headings, citations, examples, %
+formulat,etc.\\
+\end{sloppypar}
+
+\begin{verbatim}
+#include <stdio.h>
+static int test(char * str) {
+	return str;
+}
+\end{verbatim}
+\begin{verbatim*}
+#include <stdio.h>
+static int test(char * str) {
+	return str;
+}
+\end{verbatim*}
+\makeatletter
+\renewcommand{\verbatim@font}{\sffamily\slshape\small}
+\makeatother
+\begin{verbatim}
+#include <stdio.h>
+static int test(char * str) {
+	return str;
+}
+\end{verbatim}
+
+\begin{Verbatim}
+#include <stdio.h>
+static int test(char * str) {
+	return str;
+}
+\end{Verbatim}
+
+
+\begin{Verbatim}[numbers=left,commandchars=\\\{\}]
+#include <stdio.h>
+static int test(char * str) \{
+	str = str++;
+	return \label{verbtext};
+\}
+\end{Verbatim}
+上面例子中第\ref{verbtext} 行语句是返回主程序命令。
+
+\begin{Verbatim}[numbers=left,commandchars=+\[\]]
+#include <stdio.h>
+static int test(char * str) {
+	str = str--;
+	return +label[verbtext];
+}
+\end{Verbatim}
+上面例子中第\ref{verbtext} 行语句是返回主程序命令。
+
+\VerbatimFootnotes
+脚注命令\footnote{\verb"\footnote"}中可以使用抄录命令。
+
+\begin{verse}
+The Red Army fears not the trials of the Long March,\\
+Holding light ten thousand crags and torrets.\\...\\
+\end{verse}
+
+\newenvironment{Proof}{{\noindent \em Proof}\par}{\hfill $\diamondsuit$\par}
+\begin{Proof}
+This words proof that words;
+\end{Proof}
+
+\newenvironment{Theorem}[1][]{\par\noindent{\heiti 定理}#1\quad}{\par}
+\begin{Theorem}[(必要条件)]
+设可微分的函数...
+\end{Theorem}
+
+\end{document}
