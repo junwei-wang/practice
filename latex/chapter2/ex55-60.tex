@@ -1,20 +1,37 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Filename:      ex55-60.tex
 % Author:        Junwei Wang(wakemecn@gmail.com)
-% Last Modified: 2012-03-12 21:20
+% Last Modified: 2012-03-11 21:38
 % Description:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{book}
 \usepackage[space]{ctex}
-\usepackage{cal}
+\usepackage{calc}
 \begin{document}
 \newcounter{mycounter}
 \setcounter{mycounter}{2}
-初值为\themycounter,加5后，\setcounter{\value{mycounter}+5}%
+初值为\themycounter,加5后，\setcounter{mycounter}{\value{mycounter}+5}%
 其值为\themycounter。\setlength{\parindent}{10.5pt+3pt*5}%
 经过运算，长度数据命令\verb"parindent"所表示的长度是：\the\parindent。
 
+\setcounter{mycounter}{2*\real{2.5}}
+\themycounter,
+\setcounter{mycounter}{2*\real{2.95}}
+\themycounter\\
 
+\setlength{\parindent}{2pt*\real{2.95}}
+\the\parindent,
+\setlength{\parindent}{3pt*\ratio{2.5pt}{2pt}}
+\the\parindent\\
+
+\newlength{\len}
+\len=2pt plus 2pt minus 2pt
+\the\len\\
+\setlength{\len}{\len/2}
+\the\len\\
+\setlength{\len}{\len/3}
+\the\len\\
+\setlength{\len}{\len*6}
+\the\len\\
 
 \end{document}
-
