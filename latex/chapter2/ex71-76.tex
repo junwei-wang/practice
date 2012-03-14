@@ -1,0 +1,67 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Filename:      ex71-76.tex
+% Author:        Junwei Wang(wakemecn@gmail.com)
+% Last MModified: 2012-03-14 17:05
+% Description:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{book}
+\usepackage[space]{ctex}
+\usepackage{xcolor}
+\begin{document}
+\newcommand{\mycolorbox}[1]{\color{#1}\rule{6mm}{4mm}\hspace{7pt}}
+\mycolorbox{red!75}
+\mycolorbox{red!75!green}
+\mycolorbox{red!75!green!50}
+\mycolorbox{red!75!green!50!blue}
+\mycolorbox{red!75!green!50!blue!25}
+\mycolorbox{red!75!green!50!blue!25!gray}
+
+\color{blue}文本的颜色是蓝色的\\
+\color[rgb]{1,0,1}\rule{6cm}{1pt}
+
+\textcolor{green!15!blue!95}{文本元素的颜色设置}
+\textcolor{orange}{%
+\begin{tabular}{|c|c|}\hline
+123 & 458 \\
+316 & 795 \\ \hline
+\end{tabular}
+}
+
+\colorbox{green!35!blue!75}{文本元素放置的位置}
+\colorbox{orange}{%
+\begin{tabular}{|c|c|}\hline
+123 & 448 \\
+316 & 795 \\ \hline
+\end{tabular}
+}
+
+\fboxrule=1pt
+\fcolorbox{blue}{green!35!blue!75}{文本元素的颜色设置}
+\fcolorbox{red}{orange}{%
+\begin{tabular}{|c|c|}\hline
+123 & 448 \\
+316 & 795 \\ \hline
+\end{tabular}
+}
+
+\definecolorseries{mycolors}{rgb}{last}{red}{yellow}
+\resetcolorseries[5]{mycolors}
+\newcommand{\MM}{\rule{6mm}{0mm}\rule{6mm}{0mm}}
+\newcommand{\R}{\colorbox{mycolors!!+}{\MM}}
+\R\R\R\R\R\R\\[9pt]
+\resetcolorseries[5]{mycolors}
+\color{mycolors!!+}AA,
+\color{mycolors!!+}AA,
+\color{mycolors!!+}AA,
+\color{mycolors!!+}AA \\[9pt]
+\resetcolorseries[5]{mycolors}
+\textcolor{mycolors!!+}{颜色，}
+\textcolor{mycolors!!+}{颜色，}
+\textcolor{mycolors!!+}{颜色，}
+\textcolor{mycolors!!+}{颜色}\\[9pt]
+\colorbox{mycolors!![0]}{\MM}
+\colorbox{mycolors!![3]}{\MM}
+\colorbox{mycolors!![5]}{\MM}
+
+\end{document}
+
