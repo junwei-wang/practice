@@ -1,4 +1,7 @@
-all: ex5-1.pdf ex5-2.pdf ex5-3.pdf
+all: ex5-4.pdf ex5-1.pdf ex5-2.pdf ex5-3.pdf
+
+ex5-4.pdf: ex5-4.tex
+	xelatex $^
 ex5-1.pdf: ex5-1.tex
 	xelatex $^
 ex5-2.pdf: ex5-2.tex
