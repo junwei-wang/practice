@@ -1,0 +1,22 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Filename:      test.tex
+% Author:        Junwei Wang(wakemecn@gmail.com)
+% Last Modified: 2012-04-16 14:26
+% Description:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+\usepackage{CJK}
+\begin{document}
+\begin{CJK}{UTF8}{gkai}
+%我是在linux下用使用latex的, window用户将上一行改为\begin{CJK}{GBK}{kai}
+text\cite{name1}\cite{name2}
+中文
+把Latex中的 Reference 写成中文的"参考文献"
+%如果文档类是article之类的, 用\renewcommand\refname{参考文献}
+%如果文档类是book之类的, 用\renewcommand\bibname{参考文献}
+\renewcommand\refname{参考文献}
+\bibliographystyle{plain}
+\bibliography{ example.bib}
+\end{CJK}
+\end{document}
+
