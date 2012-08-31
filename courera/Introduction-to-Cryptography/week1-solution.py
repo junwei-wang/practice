@@ -2,7 +2,7 @@
 #
 # Filename:      week1-solution.py
 # Author:        Junwei Wang(wakemecn@gmail.com)
-# Last Modified: 2012-08-30 12:52
+# Last Modified: 2012-08-31 22:00
 # Description:
 #
 #
@@ -35,13 +35,6 @@ def strxor(a, b):     # xor two strings of different lengths
         return "".join([chr(ord(x) ^ ord(y)) for (x, y) in zip(a, b[:len(a)])])
 
 
-def encrypt(key, msg):
-    c = strxor(key, msg)
-#    print
-#    print c.encode('hex')
-    print c.encode('hex')
-    return c 
-
 def is_alphbet(char):
     if ord(char) == 0:
         return True
@@ -70,6 +63,7 @@ def main():
 
         xor_matrix.append(tmp)
 
+        print "======================================"
         print i + 1
         #print tmp
         for pos in range(0, len(target.decode("hex"))):
