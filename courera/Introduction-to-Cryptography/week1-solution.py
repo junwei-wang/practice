@@ -2,7 +2,7 @@
 #
 # Filename:      week1-solution.py
 # Author:        Junwei Wang(wakemecn@gmail.com)
-# Last Modified: 2012-08-31 22:00
+# Last Modified: 2012-08-31 22:16
 # Description:
 #
 #
@@ -40,8 +40,8 @@ def is_alphbet(char):
         return True
     elif ord(char) >= 65 and ord(char) <= 90:
         return True
-#    elif ord(char) >= 97 and ord(char) <= 122:
-#        return True
+    elif ord(char) >= 97 and ord(char) <= 122:
+        return True
     else:
         return False
 
