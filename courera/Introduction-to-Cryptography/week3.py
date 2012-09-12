@@ -2,13 +2,18 @@
 #
 # Filename:      week3.py
 # Author:        Junwei Wang(wakemecn@gmail.com)
-# Last Modified: 2012-09-12 20:42
+# Last Modified: 2012-09-12 21:05
 # Description:
 #
 #
 
 import os
 from Crypto.Hash import SHA256
+
+def hash_sth(sth):
+    h = SHA256.new()
+    h.update(sth)
+    return h.digest()
 
 def compute_hash(filename):
     b_size = 1024
@@ -22,26 +27,20 @@ def compute_hash(filename):
     if last_size == 0:
         f.seek((-1) * b_size, 2)
         content = f.read(b_block)
-        h = SHA256.new()
-        h.update(content);
-        res = h.digest();
+        res = hash_sth(content)
         f.seek((-1) * b_size, 1)
         
         f_blocks -= 1;
     else:
         f.seek((-1) * last_size, 2)
         content = f.read(last_size)
-        h = SHA256.new()
-        h.update(content);
-        res = h.digest();
+        res = hash_sth(content)
         f.seek((-1) * last_size, 1)
 
     for i in range(f_blocks, 0, -1):
         f.seek((-1) * b_size, 1)
         content = f.read(b_size)
-        h = SHA256.new()
-        h.update(content + res);
-        res = h.digest();
+        res = hash_sth(content + res)
         f.seek((-1) * b_size, 1)
 
     print res.encode('hex')
@@ -49,5 +48,5 @@ def compute_hash(filename):
     
 
 if __name__ == '__main__':
-    f_name = "./goal.mp4"
+    f_name = "goal.mp4"
     compute_hash(f_name)
