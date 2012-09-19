@@ -1,7 +1,7 @@
 /*
  * Filename:      sort.c
  * Author:        Junwei Wang(wakemecn@gmail.com)
- * Last Modified: 2012-04-20 07:35
+ * Last Modified: 2012-09-17 07:27
  * Description:   Insertion Sort
  *                Selection Sort
  *
@@ -11,6 +11,7 @@
 
 void insertion_sort(int[], int size);
 void selection_sort(int[], int size);
+void quick_sort(int[], int begin, int end);
 int pick_min(int[], int start, int end);
 void swap(int[], int, int);
 void prt_arr(int[], int size);
@@ -21,7 +22,8 @@ int main(void)
 	prt_arr(arr, sizeof(arr)/sizeof(int));
 
 //	insertion_sort(arr, sizeof(arr)/sizeof(int));
-	selection_sort(arr, sizeof(arr)/sizeof(int));
+//	selection_sort(arr, sizeof(arr)/sizeof(int));
+	quick_sort(arr, 0, sizeof(arr)/sizeof(int) - 1);
 	prt_arr(arr, sizeof(arr)/sizeof(int));
 
 	exit(0);
@@ -59,6 +61,36 @@ void selection_sort(int arr[], int size)
 		min_pos = pick_min(arr, i, size);
 		swap(arr, i, min_pos);
 	}
+}
+
+/*
+ * Quick Sort
+ */
+void quick_sort(int arr[], int begin, int end)
+{
+	int low = begin, high = end;
+	int key = arr[begin];
+
+	if (low >= high)
+		return;
+	
+	while (low < high) {
+		while (low < high && arr[high] > key)
+			high--;
+		if (low < high)
+			arr[low++] = arr[high];
+
+		while (low < high && arr[low] < key)
+			low++;
+		if (low < high)
+			arr[high--] = arr[low];
+	}
+
+	arr[low] = key;
+	if (begin < low - 1)
+		quick_sort(arr, begin, low - 1);
+	if (low + 1 < end)
+		quick_sort(arr, low + 1, end);
 }
 
 /*
