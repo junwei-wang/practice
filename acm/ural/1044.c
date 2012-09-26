@@ -1,7 +1,15 @@
 /*
  * Filename:      1044.c
  * Author:        Junwei Wang(wakemecn@gmail.com)
- * Last Modified: 2012-09-19 07:42
+ * Last Modified: 2012-09-26 08:35
+ * Description:
+ *
+ */
+
+/*
+ * Filename:      1044.c
+ * Author:        Junwei Wang(wakemecn@gmail.com)
+ * Last Modified: 2012-09-26 08:35
  * Description:
  *
  */
@@ -36,7 +44,7 @@ int main(void)
 		tmp1 = 0;
 	}
 	
-	for (j=1; j<=n * 9; j++)
+	for (j=1; j<=n * 9 / 2; j++)
 		sum += a[j] * a[j];
 	
 	printf("%d\n", sum + 1);
