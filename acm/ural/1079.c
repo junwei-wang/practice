@@ -1,7 +1,7 @@
 /*
  * Filename:      1079.c
  * Author:        Junwei Wang(wakemecn@gmail.com)
- * Last Modified: 2012-09-26 14:17
+ * Last Modified: 2012-09-26 15:58
  * Description:
  *
  */
@@ -10,7 +10,7 @@
 #include <math.h>
 
 long a[100001];
-long max[10001];
+long max[100001];
 long i; 
 long n;
 
@@ -31,7 +31,6 @@ int main(void)
 
 	for (i=2; i<=99999; i++) {
 		a[i] = compute(i);
-//		printf("a[%ld]=%ld\n", i, a[i]);
 
 		if (a[i] > max[i-1])
 			max[i] = a[i];
