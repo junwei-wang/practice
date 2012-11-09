@@ -1,7 +1,7 @@
 /*
  * Filename:      1086.c
  * Author:        Junwei Wang(wakemecn@gmail.com)
- * Last Modified: 2012-09-26 16:11
+ * Last Modified: 2012-10-20 12:58
  * Description:
  *
  */
